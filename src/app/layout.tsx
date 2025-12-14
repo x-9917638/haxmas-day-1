@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Pacifico, Delius_Swash_Caps } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const pacifico = Pacifico({
   subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pacifico",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const deliusswashcaps = Delius_Swash_Caps({
   subsets: ["latin"],
+  weight: "400",
+  variable: "--font-delius-swash-caps",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${deliusswashcaps.variable} ${pacifico.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
